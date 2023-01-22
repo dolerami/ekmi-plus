@@ -94,6 +94,8 @@ a{
   text-transform: uppercase;
 
   color: #343434;
+
+  position:relative;
 }
 
 .main-li:nth-of-type(2)>.main-menu{
@@ -183,6 +185,9 @@ span{
 
 .branch-ul{
   display:none;
+  position: absolute;
+  top: 23px;
+  left: 0;
 }
 
 .main-li:nth-of-type(1)>.main-menu:hover{
