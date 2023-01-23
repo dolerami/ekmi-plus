@@ -19,7 +19,62 @@ const routes = [
     component: function () {
       return import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
     }
-  }
+  },
+  {
+    path: '/sofas',
+    name: 'sofas',
+    component: HomeView
+  },
+  {
+    path: '/armchairs',
+    name: 'armchairs',
+    component: HomeView
+  },
+  {
+    path: '/chairs',
+    name: 'chairs',
+    component: HomeView
+  },
+  {
+    path: '/beds',
+    name: 'beds',
+    component: HomeView
+  },
+  {
+    path: '/mattresses',
+    name: 'mattresses',
+    component: HomeView
+  },
+  {
+    path: '/puffs',
+    name: 'puffs',
+    component: HomeView
+  },
+  {
+    path: '/exclusive-furniture',
+    name: 'exclusive-furniture',
+    component: HomeView
+  },
+  {
+    path: '/2d-3d-models',
+    name: '2d-3d-models',
+    component: HomeView
+  },
+  {
+    path: '/ru',
+    name: 'russian',
+    component: HomeView
+  },
+  {
+    path: '/ua',
+    name: 'ukrainian',
+    component: HomeView
+  },
+  {
+    path: '/en',
+    name: 'english',
+    component: HomeView
+  },
 ]
 
 const router = new VueRouter({
