@@ -17,7 +17,7 @@
         </li>
         <li class="main-li text">Индивидуальная мебель</li>
         <li class="main-li text">Контакты</li>
-        <li class="main-li logo"><img src="../assets/telegram-cloud-document-2-5233443011957888024 1.png"  class="img" alt="EKMI+ Logo"></li>
+        <li class="main-li logo"><router-link to="/"><img src="../assets/telegram-cloud-document-2-5233443011957888024 1.png"  class="img" alt="EKMI+ Logo"></router-link></li>
         <li class="main-li text">О компании</li>
         <li class="main-li phone"><a href="tel:+38 (099)-638-45-37" class="tel">+38 (099)-638-45-37</a></li>
         <li class="main-li language" id="lang" @click="show">
