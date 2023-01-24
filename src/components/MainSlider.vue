@@ -1,14 +1,22 @@
 <template>
-  <section>
-    <div class="main">
-      <h2>
-        <span>Л</span>УЧШАЯ ЖИЗНЬ,
-        СОЗДАННАЯ ДЛЯ ВАС!
-      </h2>
-      <p>Основано в 1993 году</p>
-      <button>перейти в КАталог</button>
-      <div class="slider">
-        <img src="../assets/10000_Post01.png" alt="Couch">
+  <section class="sec-1">
+    <div class="main-slider">
+      <div class="main-cta">
+        <div class="main-text">
+          <h2 class="main-h2">
+            <span class="main-span">Л</span>УЧШАЯ ЖИЗНЬ,
+            СОЗДАННАЯ ДЛЯ ВАС!
+          </h2>
+        </div>
+        <router-link to="/catalogue" class="main-route">
+          <button type="button" class="catalogue-dir">перейти в КАталог</button>
+        </router-link>
+      </div>
+      <div class="text-and-pic">
+        <p class="founded-text">Основано в 1993 году</p>
+        <div class="main-img">
+          <img src="../assets/10000_Post01.png" alt="Couch" class="main-couches">
+        </div>
       </div>
     </div>
   </section>
@@ -22,89 +30,112 @@ export default {
 
 <style lang="scss" scoped>
 
-section{
+.sec-1{
   width:100vw;
-  height:98.8vh;
+  height:51.73vw;
 
-  .main{
+  .main-slider{
+    position:relative;
+
     width:100vw;
-    height:78.2vh;
+    height:41vw;
+
     background: #CCB2A3;
 
-    position: relative;
+    .main-cta{
+      position:absolute;
+      top:12.1vw;
+      left:8.9vw;
 
-    h2{
-      position: absolute;
-      left: 8.7vw;
-      top: 11.3vw;
+      width:18.75vw;
+      height:20vw;
 
-      font-family: 'Raleway',sans-serif;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 2.7vw;
-      line-height: 110%;
-      /* or 46px */
+      .main-text{
+        padding-bottom: 4.2vw;
 
-      display: flex;
-      align-items: center;
-      text-transform: capitalize;
+        .main-h2{
+          font-family: 'Raleway',sans-serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 2.9vw;
+          line-height: 110%;
 
-      color: #FFFFFF;
-      margin:0;
+          color: #FFFFFF;
 
-      span{
-        color: #FF9619;
+          .main-span{
+            color: #FF9619;
+          }
+        }
+      }
+
+      .main-route{
+        text-decoration:none;
+
+        .catalogue-dir{
+          width: 14.5vw;
+          height: 3vw;
+
+          background: #5B5B5B;
+          border:none;
+
+          text-decoration: none;
+          font-family: 'Raleway',sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 1.1vw;
+          line-height: 150%;
+          /* or 24px */
+
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+          text-align: center;
+
+          text-transform: uppercase;
+
+          color: #FFFFFF;
+        }
+        .catalogue-dir:hover{
+          background: #FF9619;
+        }
       }
     }
+    .text-and-pic{
+      position:absolute;
+      top:2.4vw;
+      right:8.9vw;
 
-    p{
-      position: absolute;
-      right: 8.6vw;
-      top: 2.27vw;
+      width:60.4vw;
+      height:49.3vw;
 
-      font-family: 'Raleway',sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 1.3vw;
-      line-height: 127.5%;
-      /* or 25px */
+      display:flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-end;
 
-      display: flex;
-      align-items: center;
+      .founded-text{
+        font-family: 'Raleway',sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.4vw;
+        line-height: 127.5%;
 
-      color: #FFFFFF;
-    }
+        color: #FFFFFF;
 
-    button{
-      position: absolute;
-      width: 13.6vw;
-      height: 5.7vh;
-      left: 8.7vw;
-      top: 70.8vh;
+        margin:0;
+        padding-bottom:2.4vw;
+      }
 
-      background: #FF9619;
+      .main-img{
+        width: 60.4vw;
+        height: 42.8vw;
 
-      font-family: 'Raleway',sans-serif;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 1vw;
-      line-height: 150%;
-      /* or 24px */
-
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      text-align: center;
-      text-transform: uppercase;
-
-      color: #FFFFFF;
-    }
-
-    .slider{
-      position: absolute;
-      width: 56.6vw;
-      left: 28.3vw;
-      top: 28vh;
+        .main-couches{
+          width: 60.4vw;
+          height: 42.8vw;
+        }
+      }
     }
   }
 }

@@ -18,7 +18,7 @@
         <li class="main-li text">Индивидуальная мебель</li>
         <li class="main-li text">Контакты</li>
         <li class="main-li logo"><router-link to="/"><img src="../assets/telegram-cloud-document-2-5233443011957888024 1.png"  class="img" alt="EKMI+ Logo"></router-link></li>
-        <li class="main-li text">О компании</li>
+        <li class="main-li text"><router-link to="/about">О компании</router-link></li>
         <li class="main-li phone"><a href="tel:+38 (099)-638-45-37" class="tel">+38 (099)-638-45-37</a></li>
         <li class="main-li language" id="lang" @click="show">
           {{ currentLanguage }}
@@ -63,8 +63,8 @@ export default {
 
 nav{
   margin:0 auto;
-  max-width: 83.5%;
-  padding:1.6vw 0;
+  max-width: 81.23vw;
+  padding:1.5vw 0;
 
   .main-ul{
     display: flex;
@@ -181,20 +181,26 @@ nav{
       color: #343434;
     }
 
-    .logo>.img{
-      width: 14.1vw;
+    .logo{
+      a{
+        img{
+          width: 14.1vw;
+        }
+      }
     }
 
     .text:nth-of-type(5){
-      font-family: 'Raleway',sans-serif;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 150%;
-      /* or 20px */
+      a{
+        font-family: 'Raleway',sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 150%;
+        /* or 20px */
 
-      text-transform: uppercase;
+        text-transform: uppercase;
 
-      color: #343434;
+        color: #343434;
+      }
     }
 
     .phone{
