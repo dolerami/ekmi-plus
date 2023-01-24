@@ -4,7 +4,7 @@
       <div class="main-cta">
         <div class="main-text">
           <h2 class="main-h2">
-            <span class="main-span">Л</span>УЧШАЯ ЖИЗНЬ,
+            <span class="orange">Л</span>УЧШАЯ ЖИЗНЬ,
             СОЗДАННАЯ ДЛЯ ВАС!
           </h2>
         </div>
@@ -23,6 +23,7 @@
 </template>
 
 <script>
+
 export default {
   name: "MainSlider"
 }
@@ -62,7 +63,7 @@ export default {
 
           color: #FFFFFF;
 
-          .main-span{
+          .orange{
             color: #FF9619;
           }
         }
@@ -129,11 +130,36 @@ export default {
 
       .main-img{
         width: 60.4vw;
-        height: 42.8vw;
+        height: 45.1vw;
 
         .main-couches{
           width: 60.4vw;
           height: 42.8vw;
+          background-size: contain;
+        }
+
+        .main-couches:nth-of-type(1){
+          background-image: url("../assets/10000_Post01.png");
+        }
+
+        .main-couches:nth-of-type(2){
+          background-image: url("../assets/Леон2.png");
+          display:none;
+        }
+
+        .main-couches:nth-of-type(3){
+          background-image: url("../assets/Ампир2.png");
+          display:none;
+        }
+        .carousel-buttons{
+          .carousel-buttons{
+            width: 50px;
+            height: 50px;
+            -webkit-border-radius: 25px;
+            -moz-border-radius: 25px;
+            border-radius: 25px;
+            background: #343434;
+          }
         }
       }
     }
