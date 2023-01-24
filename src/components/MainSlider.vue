@@ -14,8 +14,23 @@
       </div>
       <div class="text-and-pic">
         <p class="founded-text">Основано в 1993 году</p>
-        <div class="main-img">
-          <img src="../assets/10000_Post01.png" alt="Couch" class="main-couches">
+        <div class="slider-images">
+          <div class="img-container">
+            <div class="slider-item">
+              <img src="../assets/10000_Post01.png" alt="Couch" class="main-couches active-img">
+            </div>
+            <div class="slider-item">
+              <img src="../assets/Леон2.png" alt="Couch" class="main-couches">
+            </div>
+            <div class="slider-item">
+              <img src="../assets/Ампир2.png" alt="Couch" class="main-couches">
+            </div>
+          </div>
+          <div class="slider-buttons">
+            <span class="material-icons dots active-dot">circle</span>
+            <span class="material-icons dots">circle</span>
+            <span class="material-icons dots">circle</span>
+          </div>
         </div>
       </div>
     </div>
@@ -128,37 +143,52 @@ export default {
         padding-bottom:2.4vw;
       }
 
-      .main-img{
-        width: 60.4vw;
-        height: 45.1vw;
-
-        .main-couches{
+      .slider-images{
+        .img-container{
           width: 60.4vw;
           height: 42.8vw;
-          background-size: contain;
-        }
+          display:flex;
+          flex-direction: row;
+          justify-content: space-between;
 
-        .main-couches:nth-of-type(1){
-          background-image: url("../assets/10000_Post01.png");
-        }
+          .slider-item{
+            width: 60.4vw;
+            height: 42.8vw;
 
-        .main-couches:nth-of-type(2){
-          background-image: url("../assets/Леон2.png");
-          display:none;
+            .main-couches{
+              width: 60.4vw;
+              height: 42.8vw;
+              background-size: contain;
+            }
+          }
         }
+        .slider-buttons{
+          width:4.1vw;
+          height:2.3vw;
+          padding-top:1.1vw;
 
-        .main-couches:nth-of-type(3){
-          background-image: url("../assets/Ампир2.png");
-          display:none;
-        }
-        .carousel-buttons{
-          .carousel-buttons{
-            width: 50px;
-            height: 50px;
-            -webkit-border-radius: 25px;
-            -moz-border-radius: 25px;
-            border-radius: 25px;
-            background: #343434;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          margin: 0 auto;
+
+          .dots{
+            font-size: 0.9vw;
+            padding-right:0.7vw;
+
+            color: #F2F3F5;
+          }
+
+          .dots:hover{
+            cursor:pointer;
+          }
+
+          .dots:nth-of-type(3){
+            padding-right:0;
+          }
+
+          .active-dot{
+            color: #FF9619;
           }
         }
       }
