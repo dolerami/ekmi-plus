@@ -238,8 +238,6 @@ nav{
         top:-16%;
         left:75%;
         transition:all 0.3s ease;
-
-
       }
 
       label{

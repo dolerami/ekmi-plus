@@ -17,13 +17,13 @@
         <div class="slider-images">
           <div class="img-container">
             <div class="slider-item">
-              <img src="../assets/10000_Post01.png" alt="Couch" class="main-couches active-img">
+              <img src="../../public/assets/img/10000_Post01.png" alt="Couch" class="main-couches active-img">
             </div>
             <div class="slider-item">
-              <img src="../assets/Леон2.png" alt="Couch" class="main-couches">
+              <img src="../../public/assets/img/Леон2.png" alt="Couch" class="main-couches">
             </div>
             <div class="slider-item">
-              <img src="../assets/Ампир2.png" alt="Couch" class="main-couches">
+              <img src="../../public/assets/img/Ампир2.png" alt="Couch" class="main-couches">
             </div>
           </div>
           <div class="slider-buttons">
