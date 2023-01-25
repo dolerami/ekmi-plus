@@ -5,10 +5,12 @@
         <h3 class="second-h3"><span class="orange">Н</span>овинки</h3>
       </div>
       <div class="cont-slider">
-        <div class="prev">
-          <label for="slider-part" class="label-left">
-            <span class="material-icons slide">keyboard_arrow_left</span>
-          </label>
+        <div class="cont-button">
+          <div class="prev">
+            <label for="slider-part" class="label-left">
+              <span class="material-icons slide">keyboard_arrow_left</span>
+            </label>
+          </div>
         </div>
         <div class="slider-part" id="slider-part">
           <div class="product">
@@ -51,10 +53,12 @@
             </div>
           </div>
         </div>
-        <div class="next">
-          <label for="slider-part" class="label-right">
-            <span class="material-icons slide">keyboard_arrow_right</span>
-          </label>
+        <div class="cont-button">
+          <div class="next">
+            <label for="slider-part" class="label-right">
+              <span class="material-icons slide">keyboard_arrow_right</span>
+            </label>
+          </div>
         </div>
       </div>
       <router-link to="/catalogue" class="main-route">
@@ -110,23 +114,27 @@ export default {
       height:29.4vw;
 
       display: flex;
-      flex-direction: row;
       justify-content: space-evenly;
-      align-items: center;
 
-      .slide{
-        font-size: 3.1vw;
-        color: #5A5A5A;
-      }
+      .cont-button{
+        height:3.1vw;
+        padding-top:10.5vw;
 
-      .slide:hover{
-        border: 1px solid rgba(90, 90, 90, 0.7);
-        cursor:pointer;
+        .slide{
+          font-size: 3.1vw;
+          color: #5A5A5A;
+        }
+
+        .slide:hover{
+          border: 1px solid rgba(90, 90, 90, 0.7);
+          cursor:pointer;
+        }
       }
 
       .slider-part{
         width:64.5vw;
         height:29.4vw;
+        padding:0;
 
         display: flex;
         flex-direction: row;
