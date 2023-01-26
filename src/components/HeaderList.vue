@@ -117,7 +117,7 @@ nav{
 
         background: #FFFFFF;
         box-shadow: 0 0 0.6vw 0.1vw rgba(0, 0, 0, 0.15);
-        z-index: 1;
+        z-index: 3;
 
         .branch-li:hover{
             background: #FF9619;
