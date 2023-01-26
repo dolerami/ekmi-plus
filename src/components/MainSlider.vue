@@ -16,20 +16,25 @@
         <p class="founded-text">Основано в 1993 году</p>
         <div class="slider-images">
           <div class="img-container">
-            <div class="slider-item">
-              <img src="../../public/assets/img/10000_Post01.png" alt="Couch" class="main-couches active-img">
+            <div class="slider-item" :style="{'margin-left':'-' + (100 * currentSlideIndex) + '%'}">
+              <MainCarousel
+                  v-for="item in carousel_data"
+                  :key="item.id"
+                  :item_data="item"
+              />
+<!--              <img src="../../public/assets/img/10000_Post01.png" alt="Couch" class="main-couches active-img">-->
             </div>
-            <div class="slider-item">
-              <img src="../../public/assets/img/Леон2.png" alt="Couch" class="main-couches">
-            </div>
-            <div class="slider-item">
-              <img src="../../public/assets/img/Ампир2.png" alt="Couch" class="main-couches">
-            </div>
+<!--            <div class="slider-item">-->
+<!--              <img src="../../public/assets/img/Леон2.png" alt="Couch" class="main-couches">-->
+<!--            </div>-->
+<!--            <div class="slider-item">-->
+<!--              <img src="../../public/assets/img/Ампир2.png" alt="Couch" class="main-couches">-->
+<!--            </div>-->
           </div>
           <div class="slider-buttons">
-            <span class="material-icons dots active-dot">circle</span>
-            <span class="material-icons dots">circle</span>
-            <span class="material-icons dots">circle</span>
+            <span @click="firstSlide" class="material-icons dots dot">circle</span>
+            <span @click="secondSlide"  class="material-icons dots">circle</span>
+            <span @click="thirdSlide"  class="material-icons dots">circle</span>
           </div>
         </div>
       </div>
@@ -39,8 +44,56 @@
 
 <script>
 
+import MainCarousel from "@/components/MainCarousel";
 export default {
-  name: "MainSlider"
+  name: "MainSlider",
+  components: {MainCarousel},
+  props:{
+    carousel_data:{
+      type: Array,
+      default: () => []
+    },
+    interval:{
+      type: Number,
+      default: 0
+    }
+  },
+  data(){
+    return{
+      currentSlideIndex: 0
+    }
+  },
+  methods:{
+    // prevSlide(){
+    //   if(this.currentSlideIndex > 0){
+    //     this.currentSlideIndex--
+    //   }
+    // },
+    // nextSlide(){
+    //   if(this.currentSlideIndex >= this.carousel_data.length-1){
+    //     this.currentSlideIndex=0
+    //   }else{
+    //     this.currentSlideIndex++
+    //   }
+    // },
+    firstSlide(){
+      this.currentSlideIndex=0
+    },
+    secondSlide(){
+      this.currentSlideIndex=1
+    },
+    thirdSlide(){
+      this.currentSlideIndex=2
+    }
+  },
+  mounted() {
+    if(this.interval > 0){
+      let vm = this;
+      setInterval(function(){
+        vm.nextSlide()
+      },vm.interval)
+    }
+  }
 }
 </script>
 
@@ -151,15 +204,21 @@ export default {
           flex-direction: row;
           justify-content: space-between;
 
+          max-width:300px;
+          overflow:hidden;
+
           .slider-item{
             width: 60.4vw;
             height: 42.8vw;
 
-            .main-couches{
-              width: 60.4vw;
-              height: 42.8vw;
-              background-size: contain;
-            }
+            display:flex;
+            transition:all ease .5s;
+
+            //.main-couches{
+            //  width: 60.4vw;
+            //  height: 42.8vw;
+            //  background-size: contain;
+            //}
           }
         }
         .slider-buttons{

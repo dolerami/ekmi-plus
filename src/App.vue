@@ -2,6 +2,10 @@
   <div id="app">
     <HeaderList />
     <router-view />
+<!--    <v-carousel-->
+<!--      :carousel_data="sliderItems"-->
+<!--      :interval="2000"-->
+<!--    />-->
   </div>
 </template>
 
@@ -10,7 +14,7 @@ import HeaderList from "@/components/HeaderList";
 
 export default {
   name: "App.vue",
-    components: {HeaderList}
+  components: {HeaderList},
 }
 </script>
 
