@@ -14,27 +14,46 @@
       </div>
       <div class="text-and-pic">
         <p class="founded-text">Основано в 1993 году</p>
-        <div class="slider-images">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <div class="img-container">
-            <div class="slider-item" :style="{'margin-left':'-' + (100 * currentSlideIndex) + '%'}">
-              <MainCarousel
-                  v-for="item in carousel_data"
-                  :key="item.id"
-                  :item_data="item"
-              />
-<!--              <img src="../../public/assets/img/10000_Post01.png" alt="Couch" class="main-couches active-img">-->
-            </div>
-<!--            <div class="slider-item">-->
-<!--              <img src="../../public/assets/img/Леон2.png" alt="Couch" class="main-couches">-->
-<!--            </div>-->
-<!--            <div class="slider-item">-->
-<!--              <img src="../../public/assets/img/Ампир2.png" alt="Couch" class="main-couches">-->
-<!--            </div>-->
-          </div>
-          <div class="slider-buttons">
-            <span @click="firstSlide" class="material-icons dots dot">circle</span>
-            <span @click="secondSlide"  class="material-icons dots">circle</span>
-            <span @click="thirdSlide"  class="material-icons dots">circle</span>
+            <b-carousel
+                id="carousel-1"
+                v-model="slide"
+                :interval="3500"
+                indicators
+                img-width="60.4vw"
+                img-height="42.8vw"
+                @sliding-start="onSlideStart"
+                @sliding-end="onSlideEnd"
+            >
+              <b-carousel-slide alt="Couch" class="main-couches">
+                <template #img>
+                  <img
+                      class="d-block img-fluid w-100"
+                      src="../../public/assets/img/10000_Post01.png"
+                      alt="image slot"
+                  >
+                </template>
+              </b-carousel-slide>
+              <b-carousel-slide alt="Couch" class="main-couches">
+                <template #img>
+                  <img
+                      class="d-block img-fluid w-100"
+                      src="../../public/assets/img/Леон2.png"
+                      alt="image slot"
+                  >
+                </template>
+              </b-carousel-slide>
+              <b-carousel-slide alt="Couch" class="main-couches">
+                <template #img>
+                  <img
+                      class="d-block img-fluid w-100"
+                      src="../../public/assets/img/Ампир2.png"
+                      alt="image slot"
+                  >
+                </template>
+              </b-carousel-slide>
+            </b-carousel>
           </div>
         </div>
       </div>
@@ -43,61 +62,30 @@
 </template>
 
 <script>
+import {BCarousel} from "bootstrap-vue";
+import {BCarouselSlide} from "bootstrap-vue";
 
-import MainCarousel from "@/components/MainCarousel";
 export default {
   name: "MainSlider",
-  components: {MainCarousel},
-  props:{
-    carousel_data:{
-      type: Array,
-      default: () => []
-    },
-    interval:{
-      type: Number,
-      default: 0
+  components: {BCarousel, BCarouselSlide},
+  data() {
+    return {
+      slide: 0,
+      sliding: null
     }
   },
-  data(){
-    return{
-      currentSlideIndex: 0
-    }
-  },
-  methods:{
-    // prevSlide(){
-    //   if(this.currentSlideIndex > 0){
-    //     this.currentSlideIndex--
-    //   }
-    // },
-    // nextSlide(){
-    //   if(this.currentSlideIndex >= this.carousel_data.length-1){
-    //     this.currentSlideIndex=0
-    //   }else{
-    //     this.currentSlideIndex++
-    //   }
-    // },
-    firstSlide(){
-      this.currentSlideIndex=0
+  methods: {
+    onSlideStart(slide) {
+      this.sliding = true
     },
-    secondSlide(){
-      this.currentSlideIndex=1
-    },
-    thirdSlide(){
-      this.currentSlideIndex=2
-    }
-  },
-  mounted() {
-    if(this.interval > 0){
-      let vm = this;
-      setInterval(function(){
-        vm.nextSlide()
-      },vm.interval)
+    onSlideEnd(slide) {
+      this.sliding = false
     }
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 .sec-1{
   width:100vw;
@@ -144,7 +132,7 @@ export default {
           width: 14.5vw;
           height: 3vw;
 
-          background: #5B5B5B;
+          background: #FF9619;
           border:none;
 
           text-decoration: none;
@@ -166,7 +154,7 @@ export default {
           color: #FFFFFF;
         }
         .catalogue-dir:hover{
-          background: #FF9619;
+          background: #5B5B5B;
         }
       }
     }
@@ -196,58 +184,62 @@ export default {
         padding-bottom:2.4vw;
       }
 
-      .slider-images{
+      .carousel{
+        width:60.4vw;
+        height:45vw;
+
         .img-container{
           width: 60.4vw;
-          height: 42.8vw;
+          height: 45vw;
           display:flex;
           flex-direction: row;
           justify-content: space-between;
 
-          max-width:300px;
-          overflow:hidden;
-
-          .slider-item{
-            width: 60.4vw;
-            height: 42.8vw;
+          #carousel-1{
+            width: 100%;
+            height: 45vw;
 
             display:flex;
-            transition:all ease .5s;
 
-            //.main-couches{
-            //  width: 60.4vw;
-            //  height: 42.8vw;
-            //  background-size: contain;
-            //}
-          }
-        }
-        .slider-buttons{
-          width:4.1vw;
-          height:2.3vw;
-          padding-top:1.1vw;
+            .main-couches{
+              width: 100%;
+              height: 42.8vw;
+              background-size: contain;
 
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-          margin: 0 auto;
+              template{
 
-          .dots{
-            font-size: 0.9vw;
-            padding-right:0.7vw;
+                img{
+                  width: 60.4vw;
+                  height: 42.8vw;
+                  background-size: contain;
+                }
+              }
+            }
+            .carousel-indicators{
+               list-style-type: none;
+               width:6vw;
+               height:2.3vw;
 
-            color: #F2F3F5;
-          }
+               flex-direction: row;
+               justify-content: space-between;
+               align-items: flex-end;
+               margin: 0 auto;
 
-          .dots:hover{
-            cursor:pointer;
-          }
+               li{
+                 background-color:#d4d6da;
 
-          .dots:nth-of-type(3){
-            padding-right:0;
-          }
+                 width:0.9vw;
+                 height:0.9vw;
+                 border:none;
 
-          .active-dot{
-            color: #FF9619;
+                 border-radius:50%;
+                 margin:0 0.35vw;
+               }
+
+                .active{
+                  background-color: #FF9619;
+              }
+            }
           }
         }
       }

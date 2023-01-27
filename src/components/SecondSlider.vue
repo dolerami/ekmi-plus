@@ -329,7 +329,7 @@ export default {
         width: 14.5vw;
         height: 3vw;
 
-        background: #5B5B5B;
+        background: #FF9619;
         border:none;
 
         text-decoration: none;
@@ -351,7 +351,7 @@ export default {
         color: #FFFFFF;
       }
       .catalogue-dir:hover{
-        background: #FF9619;
+        background: #5B5B5B;
       }
     }
   }
