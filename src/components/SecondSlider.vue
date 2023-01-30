@@ -7,13 +7,26 @@
       <div class="cont-slider">
         <div class="cont-button">
           <div class="prev">
-            <label for="slider-part" class="label-left">
-              <span class="material-icons slide">keyboard_arrow_left</span>
+            <label
+              for="slider-part"
+              class="label-left"
+              @click="$refs.carousel.goToNext()"
+            >
+              <span class="material-icons action">keyboard_arrow_left</span>
             </label>
           </div>
         </div>
-        <div class="slider-part" id="slider-part">
-          <div class="product">
+        <agile
+          ref="carousel"
+          class="slider-part"
+          id="slider-part"
+          :dots="false"
+          :nav-buttons="false"
+          :slides-to-show="3"
+          :autoplay="true"
+          :autoplay-speed="2000"
+        >
+          <div class="slide">
             <div class="product-view">
               <img class="product-img" src="../../public/assets/img/IMG_3505-готовый.png" alt="Purple Couch">
             </div>
@@ -26,7 +39,7 @@
               </div>
             </div>
           </div>
-          <div class="product">
+          <div class="slide">
             <div class="product-view">
               <img class="product-img" src="../../public/assets/img/image 4.png" alt="Purple Couch">
             </div>
@@ -39,7 +52,7 @@
               </div>
             </div>
           </div>
-          <div class="product">
+          <div class="slide">
             <div class="product-view">
               <img class="product-img" src="../../public/assets/img/732.png" alt="Purple Couch">
             </div>
@@ -52,11 +65,58 @@
               </div>
             </div>
           </div>
-        </div>
+        </agile>
+<!--        <div class="slider-part" id="slider-part">-->
+<!--          <div class="product">-->
+<!--            <div class="product-view">-->
+<!--              <img class="product-img" src="../../public/assets/img/IMG_3505-готовый.png" alt="Purple Couch">-->
+<!--            </div>-->
+<!--            <div class="product-info">-->
+<!--              <div class="title">-->
+<!--                <h5 class="product-name">Alba</h5>-->
+<!--              </div>-->
+<!--              <div class="numbers">-->
+<!--                <h5 class="product-price">15 000 uah</h5>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="product">-->
+<!--            <div class="product-view">-->
+<!--              <img class="product-img" src="../../public/assets/img/image 4.png" alt="Purple Couch">-->
+<!--            </div>-->
+<!--            <div class="product-info">-->
+<!--              <div class="title">-->
+<!--                <h5 class="product-name">Martin</h5>-->
+<!--              </div>-->
+<!--              <div class="numbers">-->
+<!--                <h5 class="product-price">15 000 uah</h5>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="product">-->
+<!--            <div class="product-view">-->
+<!--              <img class="product-img" src="../../public/assets/img/732.png" alt="Purple Couch">-->
+<!--            </div>-->
+<!--            <div class="product-info">-->
+<!--              <div class="title">-->
+<!--                <h5 class="product-name">Luara</h5>-->
+<!--              </div>-->
+<!--              <div class="numbers">-->
+<!--                <h5 class="product-price">15 000 uah</h5>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
         <div class="cont-button">
           <div class="next">
-            <label for="slider-part" class="label-right">
-              <span class="material-icons slide">keyboard_arrow_right</span>
+            <label
+              for="slider-part"
+              class="label-right"
+              @click="$refs.carousel.goToPrev()"
+              @mouceenter="hover=true"
+              @mouceleave="hover=false"
+            >
+              <span class="material-icons action">keyboard_arrow_right</span>
             </label>
           </div>
         </div>
@@ -69,8 +129,16 @@
 </template>
 
 <script>
+import { VueAgile } from 'vue-agile'
+
 export default {
-  name: "SecondSlider"
+  name: "SecondSlider",
+  components:{
+    agile: VueAgile,
+  },
+  props:{
+    slidesToShow: 3
+  }
 }
 </script>
 
@@ -117,15 +185,20 @@ export default {
       justify-content: space-evenly;
 
       .cont-button{
-        height:3.1vw;
-        padding-top:10.5vw;
+        width:3.3vw;
+        height:29.4vw;
+        padding-bottom:4.9vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
 
-        .slide{
+        .action{
           font-size: 3.1vw;
           color: #5A5A5A;
         }
 
-        .slide:hover{
+        .action:hover{
           border: 1px solid rgba(90, 90, 90, 0.7);
           cursor:pointer;
         }
@@ -141,7 +214,7 @@ export default {
         justify-content: space-between;
         align-items: center;
 
-        .product {
+        .slide {
           width: 18.75vw;
           height: 24.2vw;
 
@@ -226,7 +299,7 @@ export default {
           }
         }
 
-        .product:hover{
+        .slide:hover{
           width:22.8vw;
           height:29.4vw;
           cursor:pointer;
@@ -254,7 +327,7 @@ export default {
           }
         }
 
-        .product:nth-of-type(1){
+        .slide:nth-of-type(1){
           .product-view{
             .product-img{
               width: 17.6vw;
@@ -266,7 +339,7 @@ export default {
           }
         }
 
-        .product:nth-of-type(1):hover{
+        .slide:nth-of-type(1):hover{
           .product-view{
             .product-img{
               width: 21.6vw;
@@ -275,7 +348,7 @@ export default {
           }
         }
 
-        .product:nth-of-type(2){
+        .slide:nth-of-type(2){
           .product-view{
             .product-img{
               width:18.5vw;
@@ -287,7 +360,7 @@ export default {
           }
         }
 
-        .product:nth-of-type(2):hover{
+        .slide:nth-of-type(2):hover{
           .product-view{
             .product-img{
               width:22.5vw;
@@ -296,7 +369,7 @@ export default {
           }
         }
 
-        .product:nth-of-type(3){
+        .slide:nth-of-type(3){
           .product-view{
             .product-img{
               width:18.4vw;
@@ -308,7 +381,7 @@ export default {
           }
         }
 
-        .product:nth-of-type(3):hover{
+        .slide:nth-of-type(3):hover{
           .product-view{
             .product-img{
               width:22.4vw;
@@ -326,8 +399,8 @@ export default {
       align-items: center;
 
       .catalogue-dir{
-        width: 14.5vw;
         height: 3vw;
+        padding:0.97vw 1.46vw;
 
         background: #FF9619;
         border:none;

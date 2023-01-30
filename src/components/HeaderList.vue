@@ -205,12 +205,19 @@ nav{
 
     .phone{
       line-height: 150%;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 0.85vw;
+      text-transform: uppercase;
+      color: #343434;
+      position: relative;
 
       .tel{
         font-family: 'Open Sans',sans-serif;
         font-style: normal;
         font-weight: 600;
         font-size: 0.85vw;
+        line-height:150%;
 
         /* or 20px */
 

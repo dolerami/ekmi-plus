@@ -19,6 +19,7 @@
             <b-carousel
                 id="carousel-1"
                 v-model="slide"
+                class="carousel-inner"
                 :interval="3500"
                 indicators
                 img-width="60.4vw"
@@ -26,7 +27,7 @@
                 @sliding-start="onSlideStart"
                 @sliding-end="onSlideEnd"
             >
-              <b-carousel-slide alt="Couch" class="main-couches">
+              <b-carousel-slide alt="Couch" class="main-couches carousel-item">
                 <template #img>
                   <img
                       class="d-block img-fluid w-100"
@@ -35,7 +36,7 @@
                   >
                 </template>
               </b-carousel-slide>
-              <b-carousel-slide alt="Couch" class="main-couches">
+              <b-carousel-slide alt="Couch" class="main-couches carousel-item">
                 <template #img>
                   <img
                       class="d-block img-fluid w-100"
@@ -44,7 +45,7 @@
                   >
                 </template>
               </b-carousel-slide>
-              <b-carousel-slide alt="Couch" class="main-couches">
+              <b-carousel-slide alt="Couch" class="main-couches carousel-item">
                 <template #img>
                   <img
                       class="d-block img-fluid w-100"
@@ -129,8 +130,8 @@ export default {
         text-decoration:none;
 
         .catalogue-dir{
-          width: 14.5vw;
           height: 3vw;
+          padding:0.97vw 1.46vw;
 
           background: #FF9619;
           border:none;

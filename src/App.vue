@@ -2,10 +2,6 @@
   <div id="app">
     <HeaderList />
     <router-view />
-<!--    <v-carousel-->
-<!--      :carousel_data="sliderItems"-->
-<!--      :interval="2000"-->
-<!--    />-->
   </div>
 </template>
 
