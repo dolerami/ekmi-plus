@@ -66,47 +66,6 @@
             </div>
           </div>
         </agile>
-<!--        <div class="slider-part" id="slider-part">-->
-<!--          <div class="product">-->
-<!--            <div class="product-view">-->
-<!--              <img class="product-img" src="../../public/assets/img/IMG_3505-готовый.png" alt="Purple Couch">-->
-<!--            </div>-->
-<!--            <div class="product-info">-->
-<!--              <div class="title">-->
-<!--                <h5 class="product-name">Alba</h5>-->
-<!--              </div>-->
-<!--              <div class="numbers">-->
-<!--                <h5 class="product-price">15 000 uah</h5>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="product">-->
-<!--            <div class="product-view">-->
-<!--              <img class="product-img" src="../../public/assets/img/image 4.png" alt="Purple Couch">-->
-<!--            </div>-->
-<!--            <div class="product-info">-->
-<!--              <div class="title">-->
-<!--                <h5 class="product-name">Martin</h5>-->
-<!--              </div>-->
-<!--              <div class="numbers">-->
-<!--                <h5 class="product-price">15 000 uah</h5>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="product">-->
-<!--            <div class="product-view">-->
-<!--              <img class="product-img" src="../../public/assets/img/732.png" alt="Purple Couch">-->
-<!--            </div>-->
-<!--            <div class="product-info">-->
-<!--              <div class="title">-->
-<!--                <h5 class="product-name">Luara</h5>-->
-<!--              </div>-->
-<!--              <div class="numbers">-->
-<!--                <h5 class="product-price">15 000 uah</h5>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
         <div class="cont-button">
           <div class="next">
             <label
