@@ -28,7 +28,7 @@
         >
           <div class="slide">
             <div class="product-view">
-              <img class="product-img" src="../../public/assets/img/IMG_3505-готовый.png" alt="Purple Couch">
+              <img class="product-img" src="../../public/assets/img/IMG_3505-готовый.png" alt="Chair">
             </div>
             <div class="product-info">
               <div class="title">
@@ -54,7 +54,7 @@
           </div>
           <div class="slide">
             <div class="product-view">
-              <img class="product-img" src="../../public/assets/img/732.png" alt="Purple Couch">
+              <img class="product-img" src="../../public/assets/img/732.png" alt="Old Couch">
             </div>
             <div class="product-info">
               <div class="title">
