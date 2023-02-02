@@ -44,7 +44,7 @@
 <style lang="scss" scoped>
 
 .sec-3{
-  width:100vw;
+  width:100%;
   height:59.3vw;
   padding:0 0 1.5vw 8.9vw;
 

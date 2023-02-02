@@ -1,9 +1,12 @@
 <template>
-  <div class="home">
-    <MainSlider v-if="screenSize > 375"/>
-    <MainSliderMobile v-else/>
-    <SecondSlider v-if="screenSize > 375"/>
+  <div class="home" v-if="screenSize > 375">
+    <MainSlider />
+    <SecondSlider />
+  </div>
+  <div class="home-mobile" v-else>
+    <MainSliderMobile />
     <SecondSliderMobile />
+    <AboutMobile />
   </div>
 </template>
 
@@ -12,10 +15,12 @@ import MainSlider from "@/components/MainSlider";
 import SecondSlider from "@/components/SecondSlider";
 import MainSliderMobile from "@/components/MainSliderMobile";
 import SecondSliderMobile from "@/components/SecondSliderMobile";
+import AboutMobile from "@/components/AboutMobile";
 
 export default {
   name: 'HomeView',
   components: {
+    AboutMobile,
     SecondSliderMobile,
     MainSliderMobile,
     SecondSlider,
@@ -23,7 +28,8 @@ export default {
   },
   props: {
     screenSize: {
-      type: Number
+      type: Number,
+      default: 0
     }
   }
 }

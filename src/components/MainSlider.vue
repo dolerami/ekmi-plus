@@ -89,13 +89,13 @@ export default {
 <style lang="scss">
 
 .sec-1{
-  width:100vw;
+  width:100%;
   height:51.73vw;
 
   .main-slider{
     position:relative;
 
-    width:100vw;
+    width:100%;
     height:41vw;
 
     background: #CCB2A3;

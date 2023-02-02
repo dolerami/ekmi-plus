@@ -10,7 +10,8 @@
             <label
               for="slider-part"
               class="label-left"
-              @click="$refs.carousel.goToNext()"
+              @click="$refs.carousel.goToPrev()"
+              :pause-on-hover="true"
             >
               <span class="material-icons action">keyboard_arrow_left</span>
             </label>
@@ -22,6 +23,7 @@
           id="slider-part"
           :dots="false"
           :nav-buttons="false"
+          :pause-on-hover="true"
           :slides-to-show="3"
           :autoplay="true"
           :autoplay-speed="2000"
@@ -71,7 +73,7 @@
             <label
               for="slider-part"
               class="label-right"
-              @click="$refs.carousel.goToPrev()"
+              @click="$refs.carousel.goToNext()"
               @mouceenter="hover=true"
               @mouceleave="hover=false"
             >
@@ -104,7 +106,7 @@ export default {
 <style lang="scss" scoped>
 
 .sec-2{
-  width:100vw;
+  width:100%;
   height:51.73vw;
 
   .second-slider{
